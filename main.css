@@ -34,3 +34,7 @@ html, body { background-color:grey; }
   padding-left: 10vw;
   background-color: Gold;}
 .footer > * { flex: 1; } /*formats things placed inside the footer*/
+
+.signin{
+  border: 3px solid #f1f1f1;
+}
