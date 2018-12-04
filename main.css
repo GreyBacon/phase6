@@ -6,14 +6,14 @@ html, body { background-color:grey; }
   flex-flow: row wrap;}
 .header { /*top bar that covers the width of the screen, holds the title but can add more in it*/
   flex: 1 100%; /* the 100% forces the flexbox to take up the whole screen*/
-  text-align: center;
-  background-color:purple;}
+  border-bottom: 2px solid;
+  background-color:#C0C7E8;}
 .main { /*main container for content, everything to the right of the sidebar*/
   flex: 7;
   order: 2;
   min-height: 85vh;
   padding: 10px;
-  background-color: MistyRose;}
+  background-color: #F4F3F3;}
 .sidebar {
   flex: 1;
   order:1;
@@ -21,7 +21,7 @@ html, body { background-color:grey; }
   flex-flow: column wrap;
   border-right: 2px solid;
   padding-left: 5px;
-  background-color: LightBlue;}
+  background-color: #e6ecf0;}
 .sidebar >a { /*formats everything inside the sidebar, designed mostly for link text formatting*/
   font-size: 1.5em;
   margin-top: 3vh;}
@@ -32,5 +32,11 @@ html, body { background-color:grey; }
   display: flex;
   flex-flow: row;
   padding-left: 10vw;
-  background-color: Gold;}
+  border-top: 2px solid;
+  background-color: #CCCCCC;}
 .footer > * { flex: 1; } /*formats things placed inside the footer*/
+.title {
+  padding-left: 20vw;
+  font-size: 4em;
+  font-family: Impact, Charcoal, sans-serif}
+.logoImg {max-width: 70vw;}
