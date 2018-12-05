@@ -24,7 +24,7 @@ html, body { background-color:grey; }
   background-color: #e6ecf0;}
 .sidebar >a { /*formats everything inside the sidebar, designed mostly for link text formatting*/
   font-size: 1.5em;
-  margin-top: 3vh;}
+  margin-top: 5vh;}
 .footer { /*bar covering the bottom of the screen, good place to put links for contact, legal stuff, etc*/
   flex: 1 100%;
   height: 4vh;
@@ -39,4 +39,10 @@ html, body { background-color:grey; }
   padding-left: 20vw;
   font-size: 4em;
   font-family: Impact, Charcoal, sans-serif}
-.logoImg {max-width: 70vw;}
+.logoImg {min-width:400px; max-width: 100%;}
+.aboutText {
+  margin: 10%;
+  width: 60%;
+  text-align: center;
+  font-size: 1.6em;
+}
