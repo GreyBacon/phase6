@@ -8,8 +8,8 @@ Review listing page holding a gallery of card elements with each leading to a de
 
 Roles:  
 Melina: login, account maintenance, profile  
-Ken: homepage, ?, ?  
-Chris:  
-Bryan:   
+Ken: homepage, contact us, about
+Chris:  terms of use, privacy policy, ?
+Bryan:  gallery, detail, ?
 terms of use, privacy policy, a 'contact us' page, as well as the actual product, itself. This might be a social network, a gallery of interactive media (such as you
 have built heretofore), or other web-based interactive product.
