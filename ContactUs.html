@@ -45,7 +45,7 @@
         <label for="feedback">Feedback:</label>
         <textarea type="text" class="form-control" id="feedback" rows="8"></textarea>
       </div>
-
+      <button id="btnSubmit" type="button" class="btn btn-primary">Submit</button>
     </div>
   </div>
   <div class="footer">
@@ -63,4 +63,7 @@
   </div>
 </div>
 </body>
+<script>
+  $("#btnSubmit").click(function() { alert("Sent!");});
+</script>
 </html>
