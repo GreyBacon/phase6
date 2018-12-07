@@ -62,9 +62,11 @@ function checkCookie(){
     alert("You should login");
     window.location.replace("p6Main.html");
   }
+
+  $('#erpro').popover({title: "WARNING!", content:"THIS ACTION CANNOT BE UNDONE!", animation: true, trigger: "hover"});
+
 }
 
-$('.erpro').popover({title: "THIS ACTION CANNOT BE UNDONE!", animation: true, trigger: "hover"});
 
 </script>
 </head>
@@ -118,9 +120,7 @@ $('.erpro').popover({title: "THIS ACTION CANNOT BE UNDONE!", animation: true, tr
             <li class="active"><a href="#" data-target-id="home"><i class="fa fa-home fa-fw"></i>Home</a></li>
             <li><a href="profile.html"><i class="fa fa-list-alt fa-fw"></i>Profile</a></li>
             <li><a href="#"><i class="fa fa-file-o fa-fw"></i>My Review Activity</a></li>
-            <li><a href="#" data-target-id="Devices"><i class="fa fa-bar-chart-o fa-fw"></i>Devices</a></li>
-            <li><a href="#" data-target-id="Messaging"><i class="fa fa-table fa-fw"></i>Messaging</a></li>
-            <li><a href="#" data-target-id="InstallationJobs"><i class="fa fa-tasks fa-fw"></i>Installation Jobs</a></li>
+            <li><a href="#"><i class="fa fa-table fa-fw"></i>Private Messages</a></li>
             <li><a href="#"><i class="fa fa-cogs fa-fw"></i>Settings</a></li>
         </ul>
     </div>
