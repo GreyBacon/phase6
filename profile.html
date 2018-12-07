@@ -23,6 +23,14 @@
    })
  });
 
+ $( function() {
+   $("#mgac").click(function(){
+       var mga  = "accountmgmt.html";
+       window.location.href = mga;
+   })
+ });
+
+
  function setCookie(cname,cvalue,exdays) {
    var exdays = 7;
     var d = new Date();
@@ -50,6 +58,8 @@
     var user=getCookie("username");
     if (user != "") {
       $(".loglink").hide();
+      loglink.innerHTML = "Welcome";
+      $("#loglink").attr("href", "#")
     } else {
       alert("You should login");
       var homepg = "p6Main.html";
@@ -69,7 +79,7 @@
 
  </script>
 </head>
-<body>
+<body onload="checkCookie()">
 <div class="flex-wrapper">
   <div class="header">   <!--Header space for a navbar or similar, should be able to add a navbar or similar in here-->
 
@@ -168,6 +178,8 @@
                                   <div class="form-group row">
                                     <div class="offset-4 col-8">
                                       <button id="edit" type="submit" class="btn btn-primary">Edit My Profile</button>
+                                      <button id="mgac" type="button" class="btn btn-primary">Manage Account</button>
+
                                     </div>
                                   </div>
                                 </form>
@@ -194,6 +206,8 @@
      <a href="p6Detail1.html">Reviews</a>
      <a href="loginpage.html" id="loglink">Login</a>
      <a href="News.html">News</a>
+     <a href="accountmgmt.html">Manage Account</a>
+
   </div>
 
 </body>
