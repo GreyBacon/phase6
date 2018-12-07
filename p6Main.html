@@ -19,6 +19,47 @@
 <body>
 <div class="flex-wrapper">
   <div class="header">   <!--Header space for a navbar or similar, should be able to add a navbar or similar in here-->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="p6Main.html">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="loginpage.html">Login <span class="sr-only">(current)</span></a></li>
+            <li><a href="News.html">News</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="p6Review1.html">Anna and the Apocalypse</a></li>
+                <li><a href="p6Review2.html">The Possession of Hannah Grace</a></li>
+                <li><a href="p6Review3.html">Head Full of Honey</a></li>
+                <li><a href="p6Review4.html">Unstoppable</a></li>
+                <li><a href="p6Review5.html">Ralph Breaks the Internet</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="ContactUs.html">Contact Us!</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+              </ul>
+            </li>
+          </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+
+
     <h1 class="title">Movie Reviews</h1>
   </div>
   <div class="main">
@@ -40,7 +81,7 @@
      <a href="About.html">About</a>
      <a href="p6Main.html">Home</a>
      <a href="p6Detail1.html">Reviews</a>
-     <a href="loginpage.html">Login</a>
+     <a href="loginpage.html" id="loglink">Login</a>
      <a href="News.html">News</a>
   </div>
 </div>

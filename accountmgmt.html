@@ -16,129 +16,110 @@
  <!-- Latest compiled JavaScript -->
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
-$( function(){
-  $(".submitpro").click(function(){
- var backbtn = "profile.html";
- console.log(backbtn);
- window.location.href=backbtn;
-});
 
-});
+function getCookie(cname){
+  var uname = cname + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i<ca.length; i++){
+    var c = ca[i].trim();
+    while (c.charAt(0) == ' ')
+        c = c.substring(1, c.length);
+    if (c.indexOf(uname)==0) {
+        return c.substring(name.length, c.length);
+    //if (c.indexOf(uname)==0) return c.substring(name.length, c.length);
 
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-
-$.(document).ready(function()){
-  var getc=getCookie("username");
-  if (getc != ""){
-    $('#loglink').hide();
+}
   }
-});
-/*function checkCookie() {
-    var usern=getCookie("username");
-    if (usern != "") {
-      $('.testhide').hide();
-      testhide.style.display = "block";
-    }
-  }*/
+  return"";
+}
+
+function checkCookie(){
+  var usr = getCookie("username");
+  if (usr != ""){
+    $('#loglink').hide
+    loglink.innerHTML = "Welcome";
+    $("#loglink").attr("href", "#")
+
+  }
+  else {
+    alert("You should login");
+    window.location.replace("p6Main.html");
+  }
+}
+
+
+
+
+
 </script>
 </head>
 <body onload="checkCookie()">
 <div class="flex-wrapper">
   <div class="header">   <!--Header space for a navbar or similar, should be able to add a navbar or similar in here-->
-    <h1 class="display-1">Title</h1>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="p6Main.html">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="loginpage.html">Login <span class="sr-only">(current)</span></a></li>
+            <li><a href="News.html">News</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="p6Review1.html">Anna and the Apocalypse</a></li>
+                <li><a href="p6Review2.html">The Possession of Hannah Grace</a></li>
+                <li><a href="p6Review3.html">Head Full of Honey</a></li>
+                <li><a href="p6Review4.html">Unstoppable</a></li>
+                <li><a href="p6Review5.html">Ralph Breaks the Internet</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="ContactUs.html">Contact Us!</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+              </ul>
+            </li>
+          </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
   </div>
   <div class="main">
 
     <div class="container">
 
-    		<div class="col-md-9">
-    		    <div class="card">
-    		        <div class="card-body">
-    		            <div class="row">
-    		                <div class="col-md-12">
-    		                    <h4>Edit Profile</h4>
-    		                    <hr>
-    		                </div>
-    		            </div>
-    		            <div class="row">
-    		                <div class="col-md-12">
-    		                    <form>
-                                  <div class="form-group row">
-                                    <label for="username" class="col-4 col-form-label">User Name*</label>
-                                    <div class="col-8">
-                                      <input id="username" name="username" placeholder="Username" class="form-control here" required="required" type="text">
-                                    </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="name" class="col-4 col-form-label">First Name</label>
-                                    <div class="col-8">
-                                      <input id="name" name="name" placeholder="First Name" class="form-control here" type="text">
-                                    </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="lastname" class="col-4 col-form-label">Last Name</label>
-                                    <div class="col-8">
-                                      <input id="lastname" name="lastname" placeholder="Last Name" class="form-control here" type="text">
-                                    </div>
-                                  </div>
 
 
-                                  <div class="form-group row">
-                                    <label for="email" class="col-4 col-form-label">Email*</label>
-                                    <div class="col-8">
-                                      <input id="email" name="email" placeholder="Email" class="form-control here" required="required" type="text">
-                                    </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="website" class="col-4 col-form-label">Website</label>
-                                    <div class="col-8">
-                                      <input id="website" name="website" placeholder="website" class="form-control here" type="text">
-                                    </div>
-                                  </div>
-                                  <div class="form-group row">
-                                    <label for="publicinfo" class="col-4 col-form-label">Bio</label>
-                                    <div class="col-8">
-                                      <textarea id="publicinfo" name="publicinfo" cols="40" rows="4" class="form-control"></textarea>
-                                    </div>
-                                  </div>
-
-                                  <div class="form-group row">
-                                    <div class="offset-4 col-8">
-                                      <button id="submitpro" type="submit" class="btn btn-primary">Update My Profile</button>
-                                    </div>
-                                  </div>
-                                </form>
-    		                </div>
-    		            </div>
-
-    		        </div>
-    		    </div>
-    		</div>
-    	</div>
 
 
 
   </div>
-  <div class="footer">
-    <a href="#" class="loglink">Link1</a>
-    <a href="#">Link2</a>
-    <a href="#">Link3</a>
-  </div>
-  <div class="sidebar">
-    <a href="loginpage.html" id="loglink">Login</a>
-     <a href="#">Link2</a>
-     <a href="#">Link3</a>
-  </div>
+</div>
+<div class="footer">
+  <a href="ContactUs.html">Contact Us!</a>
+  <a href="TermsOfUse.html">Terms of Use</a>
+  <a href="PrivacyPolicy.html">Privacy Policy</a>
+  <div style="flex: 2"></div>
+</div>
+<div class="sidebar">
+   <a href="About.html">About</a>
+   <a href="p6Main.html">Home</a>
+   <a href="p6Detail1.html">Reviews</a>
+   <a href="loginpage.html" id="loglink">Login</a>
+   <a href="News.html">News</a>
 </div>
 </body>
 </html>

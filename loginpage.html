@@ -15,6 +15,8 @@
 
  <!-- Latest compiled JavaScript -->
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
 
  <script>
  $( function() {
@@ -25,11 +27,13 @@
  });
 
  function setCookie(cname,cvalue,exdays) {
+   var exdays = 7;
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires=" + d.toGMTString();
     document.cookie = cname+"="+escape(cvalue)+"; "+expires;
 }
+
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -66,11 +70,51 @@ function putCookie(form)
 
 </head>
 
-<body>
+<body onload="checkCookie()">
 
 <div class="flex-wrapper">
   <div class="header">   <!--Header space for a navbar or similar, should be able to add a navbar or similar in here-->
-    <h1 class="display-1">Title</h1>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="p6Main.html">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="loginpage.html">Login <span class="sr-only">(current)</span></a></li>
+            <li><a href="News.html">News</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="p6Review1.html">Anna and the Apocalypse</a></li>
+                <li><a href="p6Review2.html">The Possession of Hannah Grace</a></li>
+                <li><a href="p6Review3.html">Head Full of Honey</a></li>
+                <li><a href="p6Review4.html">Unstoppable</a></li>
+                <li><a href="p6Review5.html">Ralph Breaks the Internet</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="ContactUs.html">Contact Us!</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+              </ul>
+            </li>
+          </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+
   </div>
 
   <div class="main">
@@ -88,7 +132,7 @@ function putCookie(form)
           <label for="pass">Password</label>
           <input type="Password" placeholder="Enter Password" name="pass">
         </div>
-          <button type="submit" id="logbtn" class="btn btn-primary" onclick="putCookie(document.getElementsByTagName('form'));">Login</button>
+          <button type="button" id="logbtn" class="btn btn-primary" onclick="putCookie(document.getElementsByTagName('form'));">Login</button>
         </form>
 
      </div>
@@ -97,16 +141,18 @@ function putCookie(form)
 
   </div>
 </div>
-  <div class="footer">
-    <a href="#">Link1</a>
-    <a href="#">Link2</a>
-    <a href="#">Link3</a>
-  </div>
-  <div class="sidebar">
-    <a href="loginpage.html" id="loglink">Login</a>
-     <a href="#">Link2</a>
-     <a href="#">Link3</a>
-  </div>
+<div class="footer">
+  <a href="ContactUs.html">Contact Us!</a>
+  <a href="TermsOfUse.html">Terms of Use</a>
+  <a href="PrivacyPolicy.html">Privacy Policy</a>
+  <div style="flex: 2"></div>
+</div>
+<div class="sidebar">
+   <a href="About.html">About</a>
+   <a href="p6Main.html">Home</a>
+   <a href="p6Detail1.html">Reviews</a>
+   <a href="loginpage.html">Login</a>
+   <a href="News.html">News</a>
 </div>
 
 </body>
