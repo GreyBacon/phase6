@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Group Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="main2.css">
+
+  <!-- Latest compiled and minified CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+ <!-- jQuery library -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+ <!-- Latest compiled JavaScript -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <div class="layoutWrapper">
+    <div class="header">
+      <h1>Header</h1>
+      <nav class="navbar">
+        <div class="container-fluid header">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="p6Main.html">Home</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="loginpage.html">Login <span class="sr-only">(current)</span></a></li>
+              <li><a href="News.html">News</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="p6Review1.html">Anna and the Apocalypse</a></li>
+                  <li><a href="p6Review2.html">The Possession of Hannah Grace</a></li>
+                  <li><a href="p6Review3.html">Head Full of Honey</a></li>
+                  <li><a href="p6Review4.html">Unstoppable</a></li>
+                  <li><a href="p6Review5.html">Ralph Breaks the Internet</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="ContactUs.html">Contact Us!</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+                </ul>
+              </li>
+            </ul>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </div>
+      <div id="categoryBox" class="categoryBox flex">
+      </div>
+    <div class="left">
+    </div>
+    <div class="right">
+    </div>
+    <div class="footer">
+    </div>
+  </div>
+
+  <script>
+  var categories = ["Action", "Comedy", "Fantasy", "Horror", "Romance", "Sci-Fi"];
+  var cardElement ="";
+
+  for (var i=0; i < categories.length; i++) {
+    categoryLink = categories[i] + ".html";
+    //$("#categoryBox").append("<div class='card'><div class='card-body categoryCard'><h5 class='card-title'>"+categories[i]+"</h5></div></div>");
+      $("#categoryBox").append(
+        "<div class='card'>" +
+        "<a href='" + categories[i] + ".html'> " +
+        "<div class='card-body categoryCard'>" +
+        //"<div class='card-img-top' src='/img/+ "categories[i]" + -cover.jpg'>" +
+        "<h5 class='card-text'>" + categories[i] +
+        "</h5></div></div></div>");
+  }
+  </script>
+</body>
+</html>
