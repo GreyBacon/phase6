@@ -18,10 +18,10 @@
 </head>
 <body>
   <div class="layoutWrapper">
-    <div class="header">
-      <h1>Header</h1>
+    <div class="header" >
+      <h1 style="font-size:6rem;">Movie Reviews</h1>
       <nav class="navbar">
-        <div class="container-fluid header">
+        <div class="container-fluid header" style="margin-top:20px; margin-left:30px;">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -30,15 +30,16 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="p6Main.html">Home</a>
+            <a class="navbar-brand" href="new_home.html">Home</a>
           </div>
-
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="loginpage.html">Login <span class="sr-only">(current)</span></a></li>
+              <li class="active"><a href="loginpage.html">About <span class="sr-only">(current)</span></a></li>
               <li><a href="News.html">News</a></li>
-              <li class="dropdown">
+              <li><a href="News.html">Contact Us</a></li>
+              <li><a href="News.html">News</a></li>
+              <!--<li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="p6Review1.html">Anna and the Apocalypse</a></li>
@@ -50,7 +51,7 @@
                   <li><a href="ContactUs.html">Contact Us!</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
-                </ul>
+                </ul>-->
               </li>
             </ul>
               </li>
@@ -59,7 +60,10 @@
         </div><!-- /.container-fluid -->
       </nav>
     </div>
-      <div id="categoryBox" class="categoryBox flex">
+    <div class="headerRight" style="padding-left: 40px; padding-top: 40px;">
+      <a href=# style="font-size:2rem; margin-top:2 0px;  ">Login</a>           <!-- maybe use script to change to profile if already logged in?-->
+    </div>
+      <div id="categoryBox" class="flex main">
       </div>
     <div class="left">
     </div>
@@ -71,18 +75,18 @@
 
   <script>
   var categories = ["Action", "Comedy", "Fantasy", "Horror", "Romance", "Sci-Fi"];
-  var cardElement ="";
+  //maybe add individual colors for the boxes here
 
   for (var i=0; i < categories.length; i++) {
     categoryLink = categories[i] + ".html";
-    //$("#categoryBox").append("<div class='card'><div class='card-body categoryCard'><h5 class='card-title'>"+categories[i]+"</h5></div></div>");
       $("#categoryBox").append(
-        "<div class='card'>" +
+        "<div class='card categoryCard'>" +
         "<a href='" + categories[i] + ".html'> " +
-        "<div class='card-body categoryCard'>" +
-        //"<div class='card-img-top' src='/img/+ "categories[i]" + -cover.jpg'>" +
-        "<h5 class='card-text'>" + categories[i] +
-        "</h5></div></div></div>");
+        "<div class='fullCardSpace' style='width:100%;height:100%'>" +
+        "<div class='card-body text-center'>" +
+        //"<img class='card-img-top cardDisp' src='/img/" +  categories[i] + "-cover.jpg'>" +   //card image concept, couldn't get it looking good
+        "<h1 class='card-title'>" + categories[i] + "</h1>" +
+        "</div></div></a></div>");
   }
   </script>
 </body>

@@ -1,39 +1,43 @@
-*{box-sizing: border-box;}
+*{box-sizing: border-box;color:#;}
 .layoutWrapper {
     display: grid;
-    grid-template-columns: 70px auto 70px;
+    grid-template-columns: 100px auto 100px 100px;
      grid-template-rows: 200px auto 100px;
      grid-template-areas:
-       "header header header"
-       "spaceleft main spaceright"
-       "footer footer footer";
+       "header header headerRight headerRight"
+       "spaceleft main main spaceright"
+       "footer footer footer footer";
 }
-.header { grid-area: header; align-self: stretch; justify-content: center; background-color: #48483a;}
-.left {grid-area: spaceleft; background-color: #74776b;}
-.right {grid-area: spaceright; background-color: #74776b;}
+.header { grid-area: header; text-align: center; align-self: stretch; justify-content: center; background-color: #1a1d1a;color:#8A2728;}
+.left {grid-area: spaceleft; background-color: #292929;}
+.right {grid-area: spaceright; background-color: #292929;}
 .main {grid-area: main;}
-.footer {grid-area: footer; background-color:#48483a;}
-
-
-.categoryBox {
+.footer {grid-area: footer; background-color:#1a1d1a;}
+.headerRight { grid-area: headerRight; background-color: #1a1d1a;}
+.headerRight>* {color:#8A2728;} /* affects the login button*/
+#categoryBox {
   display:flex;
   flex-wrap:wrap;
-  background-color: #2d3047;
+  background-color: #333333;
   justify-content: space-around;
-
 }
+
 
 .categoryCard {
   width:30rem;
   height:30rem;
-}
-
-.card {
+  background-color: #324376;
   border: solid black 2px;
   margin:3rem;
   border-radius:5px;
 }
-.navbar-default {
-  border-color:none;
-  background-color:none;
+
+.fullCardSpace{     /*div I used in cards to cover the full card space without including margins, used for hyperlink*/
+  padding-top:30%;
+}
+
+.cardDisp {         /*Image in the cards, currently not used*/
+  max-width:100%;
+  max-heigh: 70%;
+  border-radius:5px;
 }
