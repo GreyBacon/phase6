@@ -6,22 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="main2.css">
 
-  <!-- Latest compiled and minified CSS -->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <!-- Latest compiled and minified CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
  <!-- jQuery library -->
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
- <!-- Latest compiled JavaScript -->
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <!-- Latest compiled and minified JavaScript -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 
 </head>
-<body>
+<body onload="checkCookie()">
   <div class="layoutWrapper">
     <div class="header" >
       <h1 style="font-size:6rem;">Movie Reviews</h1>
       <nav class="navbar">
-        <div class="container-fluid header" style="margin-top:20px; margin-left:30px;">
+        <div class="container-fluid header" style="margin-top:s20px; margin-left:30px;">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -35,33 +36,16 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="loginpage.html">About <span class="sr-only">(current)</span></a></li>
-              <li><a href="News.html">News</a></li>
-              <li><a href="News.html">Contact Us</a></li>
-              <li><a href="News.html">News</a></li>
-              <!--<li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="p6Review1.html">Anna and the Apocalypse</a></li>
-                  <li><a href="p6Review2.html">The Possession of Hannah Grace</a></li>
-                  <li><a href="p6Review3.html">Head Full of Honey</a></li>
-                  <li><a href="p6Review4.html">Unstoppable</a></li>
-                  <li><a href="p6Review5.html">Ralph Breaks the Internet</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="ContactUs.html">Contact Us!</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
-                </ul>-->
-              </li>
-            </ul>
-              </li>
+              <li class="active"><a href="new_About.html">About <span class="sr-only">(current)</span></a></li>
+              <li><a href="new_News.html">News</a></li>
+              <li><a href="new_ContactUs.html">Contact Us</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
     </div>
     <div class="headerRight" style="padding-left: 40px; padding-top: 40px;">
-      <a href=# style="font-size:2rem; margin-top:2 0px;  ">Login</a>           <!-- maybe use script to change to profile if already logged in?-->
+      <a href="new_loginpage.html" id="loglink" style="font-size:2rem; margin-top:2 0px;  ">Login</a>           <!-- maybe use script to change to profile if already logged in?-->
     </div>
       <div id="categoryBox" class="flex main">
       </div>
@@ -70,6 +54,9 @@
     <div class="right">
     </div>
     <div class="footer">
+      <a href="new_ContactUs.html">Contact Us!</a>
+      <a href="new_TermsOfUse.html">Terms of Use</a>
+      <a href="new_PrivacyPolicy.html">Privacy Policy</a>
     </div>
   </div>
 
@@ -87,6 +74,46 @@
         //"<img class='card-img-top cardDisp' src='/img/" +  categories[i] + "-cover.jpg'>" +   //card image concept, couldn't get it looking good
         "<h1 class='card-title'>" + categories[i] + "</h1>" +
         "</div></div></a></div>");
+
+
+         function setCookie(cname,cvalue,exdays) {
+           var exdays = 7;
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires=" + d.toGMTString();
+            document.cookie = cname+"="+escape(cvalue)+"; "+expires;
+         }
+
+         function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+         }
+         function checkCookie() {
+            var user=getCookie("username");
+            if (user != "") {
+              $(".loglink").hide();
+              loglink.innerHTML = "Profile";
+              $("#loglink").attr("href", "new_Profile.html")
+
+               }
+            }
+
+         function putCookie(form)
+                        //this should set the UserName cookie to the proper value;
+          {
+           setCookie("username", form[0].user.value);
+
+            return true;
+          }
+
   }
   </script>
 </body>
