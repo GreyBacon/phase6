@@ -1,21 +1,81 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8"/>
+  <meta charset="utf-8"/>
   <title>Group Gallery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../p5Group/go.css">
-  <!-- Custom styles for this template -->
-  <link href="../p5Group/carousel.css" rel="stylesheet">
+  <link rel="stylesheet" href="review1.css">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+ <!-- jQuery library -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+ <!-- Latest compiled JavaScript -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+<body>
+	<div class="layoutWrapper">
+    <div class="header" >
+      <h1 style="font-size:6rem;">Movie Reviews</h1>
+      <nav class="navbar">
+        <div class="container-fluid header" style="margin-top:20px; margin-left:30px;">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="new_home.html">Home</a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="loginpage.html">About <span class="sr-only">(current)</span></a></li>
+              <li><a href="p6Detail1.html">Movies</a></li>
+              <li><a href="News.html">Contact Us</a></li>
+              <li><a href="News.html">News</a></li>
+              <!--<li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="p6Review1.html">Anna and the Apocalypse</a></li>
+                  <li><a href="p6Review2.html">The Possession of Hannah Grace</a></li>
+                  <li><a href="p6Review3.html">Head Full of Honey</a></li>
+                  <li><a href="p6Review4.html">Unstoppable</a></li>
+                  <li><a href="p6Review5.html">Ralph Breaks the Internet</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="ContactUs.html">Contact Us!</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+                </ul>-->
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </div>
+    <div class="headerRight" style="padding-left: 40px; padding-top: 40px;">
+      <a href="#" style="font-size:2rem; margin-top:2 0px;  ">Login</a>           <!-- maybe use script to change to profile if already logged in?-->
+    </div>
+      <div id="categoryBox" class="flex main">
+      </div>
+    <div class="left">
+    </div>
+    <div class="right">
+    </div>
+    <div class="footer">
+    </div>
+  </div>
+<!-- Container for bootstrap-->
+<div class="container-fluid">
+</div>	
 
 <body>
-	<div class="card" style="width: 100%;"><img src="https://m.media-amazon.com/images/M/MV5BMjA1MTIwODY4Nl5BMl5BanBnXkFtZTgwNzkxNDc2NjM@._V1_UX182_CR0,0,182,268_AL_.jpg" width="140" height="209" alt=""/>
+	<div class="card" style="width: 100%;">
+	  <p>&nbsp;</p>
+	  <p><img src="https://m.media-amazon.com/images/M/MV5BMjA1MTIwODY4Nl5BMl5BanBnXkFtZTgwNzkxNDc2NjM@._V1_UX182_CR0,0,182,268_AL_.jpg" width="140" height="209" alt=""/></p>
 		</div>
   <div class="card-body">
     <h4><a href="https://www.imdb.com/title/tt5734576/?ref_=inth_ov_tt" title="The Possession of Hannah Grace (2018)">The Possession of Hannah Grace (2018) <span class="badge badge-secondary">NEW</span></a></h4>
