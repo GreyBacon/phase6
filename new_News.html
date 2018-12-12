@@ -2,10 +2,12 @@
 <html>
 <head>
   <meta charset="utf-8"/>
-  <title>Group Gallery</title>
+  <title>News</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="main2.css">
+  <link rel="stylesheet" href="product.css"
 
+ <!--<link href="carousel.css" rel="stylesheet">-->
  <!-- Latest compiled and minified CSS -->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -15,14 +17,13 @@
  <!-- Latest compiled and minified JavaScript -->
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-
 </head>
-<body onload="checkCookie()">
+<body>
   <div class="layoutWrapper">
     <div class="header" >
-      <h1 style="font-size:6rem;">Movie Reviews</h1>
+      <h1 style="font-size:6rem;">News</h1>
       <nav class="navbar">
-        <div class="container-fluid header" style="margin-top:s20px; margin-left:30px;">
+        <div class="container-fluid header" style="margin-top:20px; margin-left:30px;">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -36,7 +37,7 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="new_About.html">About <span class="sr-only">(current)</span></a></li>
+              <li class="active"><a href="new_loginpage.html">About <span class="sr-only">(current)</span></a></li>
               <li><a href="new_News.html">News</a></li>
               <li><a href="new_ContactUs.html">Contact Us</a></li>
             </ul>
@@ -45,61 +46,37 @@
       </nav>
     </div>
     <div class="headerRight" style="padding-left: 40px; padding-top: 40px;">
-      <a href="new_loginpage.html" id="loglink" style="font-size:2rem; margin-top:2 0px;  ">Login</a>           <!-- maybe use script to change to profile if already logged in?-->
+      <a href=# style="font-size:2rem; margin-top:2 0px;  ">Login</a>           <!-- maybe use script to change to profile if already logged in?-->
     </div>
-      <div class="main"> <!-- main area begin-->
+      <div class="main">
+        <p>
+          News on Movies that are IN, and Movies that should be watched.<br>
+          We give you the list<br>
+          We give you the best <br>
+          and We give you the rest.
+          <br>
+          <br>
+        </p>
+      <p>
+        Must watch Movies.
+      </p>
 
-      </div> <!--main area end-->
+              
+      </div>
     <div class="left">
     </div>
     <div class="right">
     </div>
     <div class="footer">
-      <a href="new_ContactUs.html">Contact Us!</a>
-      <a href="new_TermsOfUse.html">Terms of Use</a>
-      <a href="new_PrivacyPolicy.html">Privacy Policy</a>
     </div>
   </div>
+
   <script>
-         function setCookie(cname,cvalue,exdays) {
-           var exdays = 7;
-            var d = new Date();
-            d.setTime(d.getTime() + (exdays*24*60*60*1000));
-            var expires = "expires=" + d.toGMTString();
-            document.cookie = cname+"="+escape(cvalue)+"; "+expires;
-         }
-
-         function getCookie(cname) {
-            var name = cname + "=";
-            var ca = document.cookie.split(';');
-            for(var i=0; i<ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0)==' ') c = c.substring(1);
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-         }
-         function checkCookie() {
-            var user=getCookie("username");
-            if (user != "") {
-              $(".loglink").hide();
-              loglink.innerHTML = "Profile";
-              $("#loglink").attr("href", "#")
-
-               }
-            }
-
-         function putCookie(form)
-                        //this should set the UserName cookie to the proper value;
-          {
-           setCookie("username", form[0].user.value);
-
-            return true;
-          }
-
-  }
+    $(document).ready(function(){
+      $('.carousel').carousel({
+        interval: 2000
+      })
+    });
   </script>
 </body>
 </html>

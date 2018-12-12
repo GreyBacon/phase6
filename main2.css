@@ -11,18 +11,28 @@
 .header { grid-area: header; text-align: center; align-self: stretch; justify-content: center; background-color: #1a1d1a;color:#8A2728;}
 .left {grid-area: spaceleft; background-color: #292929;}
 .right {grid-area: spaceright; background-color: #292929;}
-.main {grid-area: main;}
-.footer {grid-area: footer; background-color:#1a1d1a;}
+.main {grid-area: main; min-height: 70vh; background-color: #333333;}
+.footer {
+  grid-area: footer;
+  padding-top: 30px;
+  background-color:#1a1d1a;}
+.footer>a {
+  margin-left: 50px;
+}
 .headerRight { grid-area: headerRight; background-color: #1a1d1a;}
 .headerRight>* {color:#8A2728;} /* affects the login button*/
 #categoryBox {
   display:flex;
   flex-wrap:wrap;
-  background-color: #333333;
   justify-content: space-around;
 }
 
-
+a:link {
+  color:green;
+}
+a:visited {
+  color:green;
+}
 .categoryCard {
   width:30rem;
   height:30rem;
