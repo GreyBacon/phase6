@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
-  <title>Group Gallery</title>
+  <title>Profile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="main2.css">
 
@@ -20,7 +20,7 @@
 <body onload="checkCookie()">
   <div class="layoutWrapper">
     <div class="header" >
-      <h1 style="font-size:6rem;">Movie Reviews</h1>
+      <h1 style="font-size:6rem;">Profile</h1>
       <nav class="navbar">
         <div class="container-fluid header" style="margin-top:s20px; margin-left:30px;">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -45,7 +45,7 @@
       </nav>
     </div>
     <div class="headerRight" style="padding-left: 40px; padding-top: 40px;">
-      <a href="new_loginpage.html" id="loglink" style="font-size:2rem; margin-top:2 0px;  ">Login</a>           <!-- maybe use script to change to profile if already logged in?-->
+      <a href="new_loginpage.html" id="loglink" style="font-size:2rem; margin-top:2 0px;  ">Login</a>
     </div>
       <div class="main"> <!-- main area begin-->
       <div class="container"  style="margin-top:50px; margin-bottom:50px;">
@@ -162,8 +162,9 @@
 
             return true;
           }
-
   }
+  $("#mgac").click(function(){ window.location = "new_accountmgmt.html";});
+
   </script>
 </body>
 </html>

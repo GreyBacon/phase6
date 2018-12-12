@@ -47,34 +47,22 @@
     <div class="headerRight" style="padding-left: 40px; padding-top: 40px;">
       <a href="new_loginpage.html" id="loglink" style="font-size:2rem; margin-top:2 0px;  ">Login</a>           <!-- maybe use script to change to profile if already logged in?-->
     </div>
-      <div id="categoryBox" class="flex main">
-      </div>
+      <div class="main"> <!-- main area begin-->
+
+
+
+      </div> <!--main area end-->
     <div class="left">
     </div>
     <div class="right">
     </div>
     <div class="footer">
-      <a href="new_ContactUs.html">Contact Us!</a>
-      <a href="new_TermsOfUse.html">Terms of Use</a>
-      <a href="new_PrivacyPolicy.html">Privacy Policy</a>
+      <a href="ContactUs.html">Contact Us!</a>
+      <a href="TermsOfUse.html">Terms of Use</a>
+      <a href="PrivacyPolicy.html">Privacy Policy</a>
     </div>
   </div>
-
   <script>
-  var movieName = [];
-  //maybe add individual colors for the boxes here
-
-  for (var i=0; i < movieName.length; i++) {
-      $(".movieBox").append(
-        "<div class='card categoryCard'>" +
-
-        "<div class='fullCardSpace' style='width:100%;height:100%'>" +
-        "<div class='card-body text-center'>" +
-        //"<img class='card-img-top cardDisp' src='/img/" +  movieName[i] + "-cover.jpg'>" +   //card image concept, couldn't get it looking good
-        "<h1 class='card-title'>" + movieName[i] + "</h1>" +
-        "</div></div></a></div>");
-}
-
          function setCookie(cname,cvalue,exdays) {
            var exdays = 7;
             var d = new Date();
@@ -100,7 +88,7 @@
             if (user != "") {
               $(".loglink").hide();
               loglink.innerHTML = "Profile";
-              $("#loglink").attr("href", "new_Profile.html")
+              $("#loglink").attr("href", "#")
 
                }
             }
@@ -113,6 +101,7 @@
             return true;
           }
 
+  }
   </script>
 </body>
 </html>
