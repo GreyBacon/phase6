@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title class=titleSpace></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="main2.css">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body onload="checkCookie()">
+  <div class="layoutWrapper">
+    <div class="header" >
+      <h1 style="font-size:6rem;"></h1>
+      <nav class="navbar">
+        <div class="container-fluid header" style="margin-top:s20px; margin-left:30px;">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="new_home.html">Home</a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="new_About.html">About <span class="sr-only">(current)</span></a></li>
+              <li><a href="new_News.html">News</a></li>
+              <li><a href="new_ContactUs.html">Contact Us</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </div>
+    <div class="headerRight" style="padding-left: 40px; padding-top: 40px;">
+      <a href="new_loginpage.html" id="loglink" style="font-size:2rem; margin-top:2 0px;  ">Login</a>           <!-- maybe use script to change to profile if already logged in?-->
+    </div>
+      <div class="flex main" style="padding-left: 150px;padding-top: 20px;">     <!-- Empty spaces to fill out from the url-->
+
+        <div id="imageSpace" class="imageSpace" > </div>
+        <div id="titleSpace" class="titleSpace lightText"style="padding-top: 20px; font-size: 2rem;"> </div>
+        <div id="descSpace" class="descSpace lightText"> </div>
+
+      </div>
+    <div class="left">
+    </div>
+    <div class="right">
+    </div>
+    <div class="footer">
+      <a href="new_ContactUs.html">Contact Us!</a>
+      <a href="new_TermsOfUse.html">Terms of Use</a>
+      <a href="new_PrivacyPolicy.html">Privacy Policy</a>
+    </div>
+  </div>
+
+  <script>
+
+         function setCookie(cname,cvalue,exdays) {
+           var exdays = 7;
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires=" + d.toGMTString();
+            document.cookie = cname+"="+escape(cvalue)+"; "+expires;
+         }
+
+         function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+         }
+         function checkCookie() {
+            var user=getCookie("username");
+            if (user != "") {
+              $(".loglink").hide();
+              loglink.innerHTML = "Profile";
+              $("#loglink").attr("href", "new_Profile.html")
+               }
+            }
+
+         function putCookie(form)
+                        //this should set the UserName cookie to the proper value;
+          {
+           setCookie("username", form[0].user.value);
+
+            return true;
+          }
+
+
+          // decoding scripts
+          var url = window.location.href;
+          console.log("url = " + url);
+          var x = breakUpURLParameters(url);
+            console.log(x.search);
+            console.log("img url  = " + x.search.img); //please refer to http://www.w3schools.com/jsref/jsref_map.asp for example code
+            console.log("img caption  = " + decodeURI(x.search.cap)); //please refer to http://www.w3schools.com/jsref/jsref_map.asp for example code
+            console.log("img description  = " + decodeURI(x.search.desc));
+
+
+
+            //Fill out page -------------------------
+            var y = document.createElement("img");
+            var t = document.getElementById("imageSpace");
+            y.setAttribute("src", x.search.img); // set up and assign img src
+            y.setAttribute("class", "imageSpace"); //uses css class, be sure it's in the head area
+            t.appendChild(y);//populate div with image, via url parameters
+
+            $("#titleSpace").append(decodeURI(x.search.cap));
+            $("#descSpace").append(decodeURI(x.search.desc));
+
+            //fill out page with above info
+            //$("#imageSpace").append("<img src='" + x.search.img + "'>");
+            //$("#imageSpace").prepend("<img src=" + x.search.img + " />")
+            //$("#imageSpace").prepend("src", "/" + x.search.img);
+            //$("#titleSpace").append(decodeURI(x.search.cap));
+
+
+
+            //
+          function breakUpURLParameters(url) {        //analyze and output the url parameters as a useful array to caller
+              //  create a link in the DOM and set its href
+              var link = document.createElement('a');
+              link.setAttribute('href', url);
+              console.log("path variable is " + url);
+
+              //  return an easy-to-use object that breaks apart the path
+              return {
+                  host:     link.hostname,  //  'example.com'
+                  port:     link.port,      //  12345
+                  search:   mapMaker(link.search),  //  {startIndex: 1, pageSize: 10}
+                  path:     link.pathname,  //  '/blog/foo/bar'
+                  protocol: link.protocol   //  'http:'
+              }
+          }
+
+          function mapMaker(search, preserveDuplicates) { //responsible for obtaining all url params, representing them into an array
+              //  option to preserve duplicate keys (e.g. 'sort=name&sort=age')
+              preserveDuplicates = preserveDuplicates || false;  //  disabled by default
+
+              var outputNoDupes = {};
+              var returnableArray = [];  //  optional output array to preserve duplicate keys
+
+              //  sanity check
+              if(!search) throw new Error('mapMaker: your search input param is misformed?');
+
+              //  remove ? character from your url (?foo=1&bar=2 -> 'foo=1&bar=2')
+              search = search.split('?')[1];
+
+              //  split apart your keys into a useful array of key/value pairs ('foo=1&bar=2' -> ['foo=1', 'bar=2'])
+              search = search.split('&');
+
+              //  separate keys from values (['foo=1', 'bar=2'] -> [{foo:1}, {bar:2}])
+              //  then package as an array for your caller to use as variables
+              returnableArray = search.map(function(keyval){
+                                           var out = {};
+                                           keyval = keyval.split('=');
+                                           out[keyval[0]] = keyval[1];
+                                           outputNoDupes[keyval[0]] = keyval[1]; //  might as well do the no-dupe work too while we're in the loop
+                                           return out;
+                                           });
+                                           return (preserveDuplicates) ? returnableArray : outputNoDupes;
+          }
+  </script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
-  <title>Group Gallery</title>
+  <title>Movie Reviews</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="main2.css">
 
@@ -47,7 +47,7 @@
     <div class="headerRight" style="padding-left: 40px; padding-top: 40px;">
       <a href="new_loginpage.html" id="loglink" style="font-size:2rem; margin-top:2 0px;  ">Login</a>           <!-- maybe use script to change to profile if already logged in?-->
     </div>
-      <div id="categoryBox" class="flex main">
+      <div class="categoryBox flex main">
       </div>
     <div class="left">
     </div>
@@ -63,10 +63,9 @@
   <script>
   var categories = ["Action", "Comedy", "Family", "Horror", "Sci-Fi"];
   //maybe add individual colors for the boxes here
-
   for (var i=0; i < categories.length; i++) {
     categoryLink = categories[i] + ".html";
-      $("#categoryBox").append(
+      $(".categoryBox").append(
         "<div class='card categoryCard'>" +
         "<a href='" + categories[i] + ".html'> " +
         "<div class='fullCardSpace' style='width:100%;height:100%'>" +

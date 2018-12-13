@@ -12,6 +12,7 @@
 .left {grid-area: spaceleft; background-color: #292929;}
 .right {grid-area: spaceright; background-color: #292929;}
 .main {grid-area: main; min-height: 70vh; background-color: #333333;}
+.main>* {color:#E3E2E2;}
 .footer {
   grid-area: footer;
   padding-top: 30px;
@@ -21,7 +22,7 @@
 }
 .headerRight { grid-area: headerRight; background-color: #1a1d1a;}
 .headerRight>* {color:#8A2728;} /* affects the login button*/
-#categoryBox {
+.categoryBox {
   display:flex;
   flex-wrap:wrap;
   justify-content: space-around;
@@ -32,6 +33,9 @@ a:link {
 }
 a:visited {
   color:green;
+}
+a:hover {
+  color: purple;
 }
 .categoryCard {
   width:30rem;
@@ -48,10 +52,25 @@ a:visited {
 
 .cardDisp {         /*Image in the cards, currently not used*/
   max-width:100%;
-  max-heigh: 70%;
+  max-height: 70%;
   border-radius:5px;
 }
 
 .lightText {
   color:#E3E2E2;
+}
+
+.movieBox {
+  width:30rem;
+  height:30rem;
+  background-color: #324376;
+  border: solid black 2px;
+  margin:3rem;
+  border-radius:5px;
+}
+
+.imageSpace {
+  height: 500px;
+  width: auto;
+
 }
