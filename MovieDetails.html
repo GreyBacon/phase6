@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
-  <title class=titleSpace></title>
+  <title id="pageTitle" class="titleSpace"></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="main2.css">
 
@@ -122,8 +122,9 @@
             y.setAttribute("class", "imageSpace"); //uses css class, be sure it's in the head area
             t.appendChild(y);//populate div with image, via url parameters
 
-            $("#titleSpace").append(decodeURI(x.search.cap));
+            $(".titleSpace").append(decodeURI(x.search.cap));
             $("#descSpace").append(decodeURI(x.search.desc));
+            document.title=decodeURI(x.search.cap);
 
             //fill out page with above info
             //$("#imageSpace").append("<img src='" + x.search.img + "'>");
