@@ -93,6 +93,11 @@ a:hover {
     text-decoration-color:#000000;
 }
 
-.h5, h5 {
-    font-size: 3rem;
+.popover-title {
+    color: blue;
+    font-size: 15px;
+}
+.popover-content {
+    color: red;
+    font-size: 10px;
 }

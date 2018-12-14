@@ -67,6 +67,8 @@
       var homepg = "new_home.html";
       window.location.href=homepg;
        }
+       $('#erpro').popover({title: "WARNING!", content:"THIS ACTION CANNOT BE UNDONE!", animation: true, trigger: "hover"});
+
     }
 
  function putCookie(form)
@@ -129,7 +131,7 @@
         				</div>
         				<div class="col-md-4">
         					<div class="card cardacc card-body text-center">
-        						<h5 class="card-header">
+        						<h5 class="card-header"><i class="glyphicon glyphicon-flash"></i>
         							Premium Accounts
         						</h5>
         						<div class="card-body">
@@ -146,7 +148,7 @@
         						</div>
         					</div>
         					<div class="card cardacc card-body text-center">
-        						<h5 class="card-header">
+        						<h5 class="card-header"><i class="glyphicon glyphicon-usd"></i>
         							Billing Information
         						</h5>
         						<div class="card-body">
@@ -165,7 +167,7 @@
         				</div>
         				<div class="col-md-4">
         					<div class="card cardacc card-body text-center">
-        						<h5 class="card-header">
+        						<h5 class="card-header"><i class="glyphicon glyphicon-link"></i>
         							Affiliate Links
         						</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Limited time trials!</h6>
@@ -183,7 +185,7 @@
         						</div>
         					</div>
         					<div class="card cardacc card-body text-center">
-        						<h5 class="card-header">
+        						<h5 class="card-header"><i class="glyphicon glyphicon-envelope"></i>
         							Communication Settings
         						</h5>
         						<div class="card-body">
@@ -207,7 +209,7 @@
         				<div class="col-md-12">
                   <div class="form-group row">
                     <div class="col-md-12">
-    <button id="erpro" type="submit" class="btn btn-primary">Delete Profile</button>
+    <button id="erpro" type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-trash"></i>Delete Profile</button>
     <button id="lgot" type="button" class="btn btn-primary">Logout</button>
 
   </div>
