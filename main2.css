@@ -74,3 +74,25 @@ a:hover {
   width: auto;
 
 }
+
+.cardacc{
+  padding: 2px 16px;
+  width: 30rem;
+  height:auto;
+  background-color: #324376;
+  border: solid black 2px;
+  margin:3rem;
+  border-radius:5px;
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #8c8c8c;
+    border-bottom: 1px solid #c8ced3;
+    text-decoration-color:#000000;
+}
+
+.h5, h5 {
+    font-size: 3rem;
+}

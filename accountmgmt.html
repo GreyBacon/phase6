@@ -4,8 +4,7 @@
   <meta charset="utf-8"/>
   <title>Group Gallery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="main.css">
-
+  <link rel="stylesheet" href="main2.css">
 
   <!-- Latest compiled and minified CSS -->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -17,139 +16,217 @@
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
-<script>
-$( function() {
-  $("#lgot").click(function(){
-     setCookie('username', "", -1);
-      var bck  = "p6Main.html";
-      window.location.href = bck;
-  })
-});
+ <script>
+ $( function() {
+   $("#logbtn").click(function(){
+       var pro  = "new_profile.html";
+       window.location.href = pro;
+   })
+ });
 
-function setCookie(cname,cvalue,exdays) {
-  var exdays = 7;
-   var d = new Date();
-   d.setTime(d.getTime() + (exdays*24*60*60*1000));
-   var expires = "expires=" + d.toGMTString();
-   document.cookie = cname+"="+escape(cvalue)+"; "+expires;
-}
+ $( function() {
+   $("#lgot").click(function(){
+      setCookie('username', "", -1);
+       var bck  = "New_Home.html";
+       window.location.href = bck;
+   })
+ });
 
-function getCookie(cname){
-  var uname = cname + "=";
-  var ca = document.cookie.split(';');
-  for (var i = 0; i<ca.length; i++){
-    var c = ca[i].trim();
-    while (c.charAt(0) == ' ')
-        c = c.substring(1, c.length);
-    if (c.indexOf(uname)==0) {
-        return c.substring(name.length, c.length);
-    //if (c.indexOf(uname)==0) return c.substring(name.length, c.length);
 
-}
+ function setCookie(cname,cvalue,exdays) {
+   var exdays = 7;
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname+"="+escape(cvalue)+"; "+expires;
+ }
+
+ function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+
+
+
+ }
+ function checkCookie() {
+    var user=getCookie("username");
+    if (user != "") {
+      $(".loglink").hide();
+      loglink.innerHTML = "Welcome";
+      $("#loglink").attr("href", "#")
+    } else {
+      alert("You should login");
+      var homepg = "new_home.html";
+      window.location.href=homepg;
+       }
+    }
+
+ function putCookie(form)
+                //this should set the UserName cookie to the proper value;
+  {
+   setCookie("username", form[0].user.value);
+
+    return true;
   }
-  return"";
-}
-
-function checkCookie(){
-  var usr = getCookie("username");
-  if (usr != ""){
-    $('#loglink').hide
-    loglink.innerHTML = "Welcome";
-    $("#loglink").attr("href", "#")
-
-  }
-  else {
-    alert("You should login");
-    window.location.replace("p6Main.html");
-  }
-
-  $('#erpro').popover({title: "WARNING!", content:"THIS ACTION CANNOT BE UNDONE!", animation: true, trigger: "hover"});
-
-}
 
 
-</script>
+
+ </script>
 </head>
 <body onload="checkCookie()">
-<div class="flex-wrapper">
-  <div class="header">   <!--Header space for a navbar or similar, should be able to add a navbar or similar in here-->
 
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="p6Main.html">Home</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="loginpage.html">Login <span class="sr-only">(current)</span></a></li>
-            <li><a href="News.html">News</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="p6Review1.html">Anna and the Apocalypse</a></li>
-                <li><a href="p6Review2.html">The Possession of Hannah Grace</a></li>
-                <li><a href="p6Review3.html">Head Full of Honey</a></li>
-                <li><a href="p6Review4.html">Unstoppable</a></li>
-                <li><a href="p6Review5.html">Ralph Breaks the Internet</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="ContactUs.html">Contact Us!</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
-              </ul>
-            </li>
-          </ul>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
-  </div>
-  <div class="main">
-    <div class="col-md-3">
-        <ul class="nav nav-pills nav-stacked admin-menu">
-            <li class="active"><a href="#" data-target-id="home"><i class="fa fa-home fa-fw"></i>Home</a></li>
-            <li><a href="profile.html"><i class="fa fa-list-alt fa-fw"></i>Profile</a></li>
-            <li><a href="#"><i class="fa fa-file-o fa-fw"></i>My Review Activity</a></li>
-            <li><a href="#"><i class="fa fa-table fa-fw"></i>Private Messages</a></li>
-            <li><a href="#"><i class="fa fa-cogs fa-fw"></i>Settings</a></li>
-        </ul>
+  <div class="layoutWrapper">
+    <div class="header" >
+      <h1 style="font-size:6rem;">Movie Reviews</h1>
+      <nav class="navbar">
+        <div class="container-fluid header" style="margin-top:s20px; margin-left:30px;">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="new_home.html">Home</a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="new_About.html">About <span class="sr-only">(current)</span></a></li>
+              <li><a href="new_News.html">News</a></li>
+              <li><a href="new_ContactUs.html">Contact Us</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
     </div>
-    <div class="container">
-      <div class="form-group row">
-        <div class="offset-4 col-8">
-          <button id="erpro" type="submit" class="btn btn-primary">Delete Profile</button>
-          <button id="lgot" type="button" class="btn btn-primary">Logout</button>
+    <div class="headerRight" style="padding-left: 40px; padding-top: 40px;">
+      <a href="new_loginpage.html" id="loglink"style="font-size:2rem; margin-top:2 0px;  ">Login</a>           <!-- maybe use script to change to profile if already logged in?-->
+    </div>
+      <div id="categoryBox" class="flex main">
+      <div class="container-fluid">
+        	<div class="row">
+        		<div class="col-md-12">
+        			<div class="row">
+        				<div class="col-md-4">
+                  <ul class="nav nav-pills nav-stacked admin-menu">
+    <li class="active"><a href="new_profile.html" data-target-id="home"><i class="fa fa-home fa-fw"></i>Profile</a></li>
+    <li><a href="#"><i class="fa fa-file-o fa-fw"></i>My Review Activity</a></li>
+    <li><a href="#"><i class="fa fa-table fa-fw"></i>Private Messages</a></li>
+    <li><a href="#"><i class="fa fa-cogs fa-fw"></i>Settings</a></li>
+</ul>
 
-        </div>
-</div>
+        				</div>
+        				<div class="col-md-4">
+        					<div class="card cardacc card-body text-center">
+        						<h5 class="card-header">
+        							Premium Accounts
+        						</h5>
+        						<div class="card-body">
+        							<p class="card-body text-center">
+                        <ul class="list-unstyled mt-3 mb-4">
+                        <a href="#">  <li>Upgrade My Account</li></a>
+                        <a href="#">  <li>F.A.Q.</li></a>
+                        <a href="#">  <li>Help</li></a>
+                        <a href="#"> <li>Members Only Lounge</li></a>
+                        </ul>
+        							</p>
+        						</div>
+        						<div class="card-footer">
+        						</div>
+        					</div>
+        					<div class="card cardacc card-body text-center">
+        						<h5 class="card-header">
+        							Billing Information
+        						</h5>
+        						<div class="card-body">
+        							<p class="card-text">
+                        <ul class="list-unstyled mt-3 mb-4">
+                                <a href="#">  <li>Manage Payment Information</li></a>
+                                <a href="#">  <li>Edit Billing Address</li></a>
+                                <a href="#">  <li>Redeem Promo Code</li></a>
+                                <a href="#">  <li>Payment History</li></a>
+                                </ul>
+        							</p>
+        						</div>
+        						<div class="card-footer">
+        						</div>
+        					</div>
+        				</div>
+        				<div class="col-md-4">
+        					<div class="card cardacc card-body text-center">
+        						<h5 class="card-header">
+        							Affiliate Links
+        						</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Limited time trials!</h6>
 
+        						<div class="card-body">
+        							<p class="card-text">
+                        <ul class="list-unstyled mt-3 mb-4">
+                                <a href="#">  <li>Netflix</li></a>
+                                <a href="#">  <li>Hulu</li></a>
+                                <a href="#">  <li>Shudder</li></a>
+                                <a href="#">  <li>Sling</li></a>
+                                </ul>        							</p>
+        						</div>
+        						<div class="card-footer">
+        						</div>
+        					</div>
+        					<div class="card cardacc card-body text-center">
+        						<h5 class="card-header">
+        							Communication Settings
+        						</h5>
+        						<div class="card-body">
+        							<p class="card-text">
+                        <ul class="list-unstyled mt-3 mb-4">
+
+                        <a href="#">  <li>Manage Marketing Information</li></a>
+                        <a href="#">  <li>Private Messages</li></a>
+                        <a href="#">  <li>Advertising Preferences</li></a>
+                        <a href="#">  <li>Adjust Privacy Settings</li></a>
+</ul>
+
+        							</p>
+        						</div>
+        						<div class="card-footer">
+        						</div>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="row">
+        				<div class="col-md-12">
+                  <div class="form-group row">
+                    <div class="col-md-12">
+    <button id="erpro" type="submit" class="btn btn-primary">Delete Profile</button>
+    <button id="lgot" type="button" class="btn btn-primary">Logout</button>
 
   </div>
-</div>
-<div class="footer">
-  <a href="ContactUs.html">Contact Us!</a>
-  <a href="TermsOfUse.html">Terms of Use</a>
-  <a href="PrivacyPolicy.html">Privacy Policy</a>
-  <div style="flex: 2"></div>
-</div>
-<div class="sidebar">
-   <a href="About.html">About</a>
-   <a href="p6Main.html">Home</a>
-   <a href="p6Detail1.html">Reviews</a>
-   <a href="loginpage.html" id="loglink">Login</a>
-   <a href="News.html">News</a>
-
 
 </div>
+
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+</div>
+    <div class="left">
+    </div>
+    <div class="right">
+    </div>
+    <div class="footer">
+    </div>
+  </div>
+
 </body>
 </html>
